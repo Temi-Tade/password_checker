@@ -1,2 +1,2 @@
-# performance_checker
-Project for tracking and checking performance of students
+# password validator
+A password validation tool used to check the strength of passwords
