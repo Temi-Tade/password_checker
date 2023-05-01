@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PassVault</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<main>
+		<header>
+			<button id="navbarbtn"><i class="fas fa-bars"></i></button>
+			<h1>PassVault</h1>
+		</header>
+		
+		<section id="navbg">
+			<nav>
+				<ul type="none">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Other products</a></li>
+				</ul>
+			</nav>
+		</section>
+		
+		<section id="info" class="info">
+			<p>Thanks for using our product!<br>Note that we do not save users' passwords, this is just a tool for checking the strength of passwords.</p>
+			<p>By clicking "OK", you agree to the terms and conditions of using the product</p>
+			<label for="showInfo">
+				<input type="checkbox" id="showInfo">&nbsp;&nbsp;<span>Do not show this again</span>
+			</label>
+			<button>OK</button>
+		</section>
+		
+		<section>
+			<form>
+				<div id="field">
+					<input type="password" placeholder="Enter the password here">
+					<button type="button" id="togglePasswordBtn" class="fas fa-eye"></button>
+				</div>
+				
+				<button type="submit" id="checkPwdBtn">Check</button>
+			</form>
+		</section>
+	</main>
+	
+	<script src="main.js"></script>
+</html>
