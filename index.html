@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PassVault</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,17 +14,18 @@
 <body>
 	<main>
 		<header>
-			<button id="navbarbtn"><i class="fas fa-bars"></i></button>
+			<button id="navbarbtn"><i class="fas fa-bars">d</i></button>
 			<h1>PassVault</h1>
 		</header>
 		
 		<section id="navbg">
 			<nav>
 				<ul type="none">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Other products</a></li>
+					<li><button>About</button></li>
+					<li><button>Privacy Policy</button></li>
+					<li><button>Contact</button></li>
+					<li><button>Other products</button></li>
+					<li><button>Clear Site Data</button></li>
 				</ul>
 			</nav>
 		</section>
@@ -35,7 +36,7 @@
 			<label for="showInfo">
 				<input type="checkbox" id="showInfo">&nbsp;&nbsp;<span>Do not show this again</span>
 			</label>
-			<button>OK</button>
+			<button id="closeInfoBtn">OK</button>
 		</section>
 		
 		<section>
@@ -50,5 +51,6 @@
 		</section>
 	</main>
 	
-	<script src="main.js"></script>
+	<script src="./main.js"></script>
+	<script src="./password.js"></script>
 </html>

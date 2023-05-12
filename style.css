@@ -51,7 +51,7 @@ header button{
 	right: 0;
 	bottom: 0;
 	display: none;
-	
+	backdrop-filter: blur(.125em);
 }
 
 nav{
@@ -71,19 +71,18 @@ nav ul{
 	height: 100%;
 }
 
-nav li{
-	border: 1px solid;
-}
-
-nav li a{
-	text-decoration: none;
+nav li button{
+	background: transparent;
 	color: var(--bgcolor);
 	display: block;
 	padding: .75rem;
 	transition: .25s;
+	width: 100%;
+	text-align: left;
+	font-size: 1em
 }
 
-nav li a:hover, nav li a:focus{
+nav li button:hover, nav li button:focus{
 	background: var(--bgcolor);
 	color: #EEE;
 }
@@ -113,7 +112,6 @@ nav li a:hover, nav li a:focus{
 }
 
 form{
-	border: 1px solid;
 	padding: .5rem;
 	margin: 1rem auto
 }
@@ -145,9 +143,16 @@ form #field{
 #checkPwdBtn{
 	width: 70%;
 	padding: 1rem;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	border-radius: var(--borad);
 	display: block;
-	margin: auto;
+	margin: 1rem auto;
 }
 
+#closeInfoBtn{
+	width: 5rem;
+	padding: .75rem;
+	font-size: 1rem;
+	float: right;
+	border-radius: var(--borad);
+}
