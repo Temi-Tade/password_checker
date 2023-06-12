@@ -46,3 +46,4 @@ closeInfoBtn.addEventListener('click', () => {
 		info.style.display = 'none'
 	}
 })
+
