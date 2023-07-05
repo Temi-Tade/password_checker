@@ -16,14 +16,21 @@
 	--color: #333;
 	--borad: .5rem;
 	--light: #2D6AFF77;
-	--fsize: 1.2rem;
+	--fsize: 1.05rem;
+	--state_color: #2737E8;
 }
 
 html{
 	color: var(--color);
 	position: relative;
-	background: #EEE;
+	background: #eee;
 	font-family: Ubuntu, sans-serif;
+	height: 100%;
+}
+
+body{
+	font-size: var(--fsize);
+	position: relative;
 	height: 100%;
 }
 
@@ -31,13 +38,17 @@ button{
 	border: 0;
 	background: var(--bgcolor);
 	color: #EEE;
+	padding: .75rem;
+	border-radius: var(--borad);
+	font-size: 1rem
 }
 
 header{
 	background: var(--bgcolor);
 	color: #EEE;
-	padding: .5rem .25rem;
-	display: flex
+	padding: .25rem;
+	display: flex;
+	align-items: center
 }
 
 header button{
@@ -73,6 +84,10 @@ nav ul{
 	height: 100%;
 }
 
+nav li{
+	color: var(--bgcolor)
+}
+
 nav li button{
 	background: transparent;
 	color: var(--bgcolor);
@@ -81,12 +96,52 @@ nav li button{
 	transition: .25s;
 	width: 100%;
 	text-align: left;
-	font-size: 1em
 }
 
 nav li button:hover, nav li button:focus{
 	background: var(--bgcolor);
 	color: #EEE;
+}
+
+#apptheme label{
+	display: flex;
+	padding: .75rem;
+	justify-content: space-between;
+	align-items: center
+}
+
+#apptheme #theme{
+	display: none;
+}
+
+#slider{
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+	background: #ccc;
+	position: relative;
+	border-radius: 26px
+}
+
+#slider::before{
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	background: #aaa;
+	content: "";
+	top: -2.5px;
+	box-shadow: 0 0 2px 1px #777;
+	transition: .5s;
+}
+
+#theme:checked + #slider::before{
+	transform: translateX(25px);
+	background: var(--bgcolor);
+}
+
+#theme:checked + #slider{
+	background: var(--light)
 }
 
 #info{
@@ -98,7 +153,6 @@ nav li button:hover, nav li button:focus{
 	bottom: 0;
 	right: 0;
 	left: 0;
-	box-shadow: 2px 2px 2px 2px #777;
 }
 
 #info label *{
@@ -111,6 +165,19 @@ nav li button:hover, nav li button:focus{
 	width: 100%;
 	padding: .25rem;
 	align-self: center
+}
+
+#pop-up{
+	width: 20rem;
+	padding: .75rem;
+	box-shadow: 0 0 4px 2px #aaa;
+	border-radius: var(--borad);
+	position: fixed;
+	margin: .25rem;
+	left: -25rem;
+	background: #EEE;
+	transition: .75s;
+	font-weight: bold
 }
 
 form{
@@ -133,11 +200,23 @@ form #field{
 	width: 80%;
 	height: 2rem;
 	font-size: 1.25rem;
-	border-radius: .5rem 0 0 .5rem
+	border-radius: .5rem 0 0 .5rem;
+	user-select: none
 }
 
-input:focus, button:focus{
-	box-shadow: 0 0 0px 3px var(--light)
+input:focus{
+	box-shadow: 0 0 0px 4px var(--light);
+}
+
+#txt-id{
+	display: block;
+	transform: scale(0,0);
+	position: absolute
+}
+
+button:focus{
+	box-shadow: 0 0 0px 4px var(--light);
+	background: var(--state_color);
 }
 
 #field #togglePasswordBtn{
@@ -148,17 +227,15 @@ input:focus, button:focus{
 
 #checkPwdBtn{
 	width: 70%;
-	padding: 1rem;
 	font-size: 1.2rem;
-	border-radius: var(--borad);
 	display: block;
 	margin: 1rem auto;
 }
 
+
 #closeInfoBtn{
 	width: 5rem;
 	padding: .75rem;
-	font-size: 1rem;
 	float: right;
 	border-radius: var(--borad);
 }
@@ -174,8 +251,20 @@ input:focus, button:focus{
 	font-style: italic;
 }
 
-#conditions{
+#result{
 	padding: 2rem;
-	font-size: var(--fsize);
+	display: none;
 }
 
+#copyBtnContainer{
+	display: flex;
+	justify-content: flex-end;
+	padding: .5rem
+}
+
+/*
+Asynchronous validation while typing
+password generator
+theme
+animation
+*/

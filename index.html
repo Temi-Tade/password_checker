@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PassVault</title>
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="" id="darkmode">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,7 +15,7 @@
 <body>
 	<main>
 		<header>
-			<button id="navbarbtn"><i class="fas fa-bars">d</i></button>
+			<button id="navbarbtn"><i class="fas fa-bars"></i></button>
 			<h1>PassVault</h1>
 		</header>
 		
@@ -26,6 +27,10 @@
 					<li><button>Contact</button></li>
 					<li><button>Other products</button></li>
 					<li><button>Clear Site Data</button></li>
+					<li id="apptheme"><label for="theme">Darkmode
+						<input type="checkbox" name="theme" id="theme" oninput="changeTheme(this, this.value)" value="light"/>
+						<span id="slider"></span>
+					</label></li>
 				</ul>
 			</nav>
 		</section>
@@ -39,29 +44,39 @@
 			<button id="closeInfoBtn">OK</button>
 		</section>
 		
+		<div id="pop-up"></div>
+		
 		<section>
 			<form>
 				<div id="field">
 					<input type="password" placeholder="Enter the password here">
-					<button type="button" id="togglePasswordBtn" class="fas fa-eye"></button>
+					<button type="button" id="togglePasswordBtn" class="fas fa-eye" title="Toggle password visibility"></button>
 				</div>
+				
+				<input type="text" id="txt-id">
 				
 				<button type="submit" id="checkPwdBtn">Check</button>
 			</form>
 		</section>
 		
-		<section id="conditions">
+		<section id="result">
 			Password should contain at least:
-			<ul>
+			<ul id="conditons">
 				<li id="length" class="unvalidated">8 characters.</li>
 				<li id="uppercase" class="unvalidated">one uppercase letter.</li>
 				<li id="lowercase" class="unvalidated">one lowercase letter.</li>
 				<li id="special" class="unvalidated">one special character.</li>
 				<li id="number" class="unvalidated">one number.</li>
 			</ul>
+			
+			<div id="copyBtnContainer">
+				<button id="copyPwdBtn" class="btn" hidden onclick="copyPassword(password)">Copy Password</button>
+			</div>
 		</section>
 	</main>
 	
-	<script src="./main.js"></script>
-	<script src="./password.js"></script>
+	<script src="./scripts/data.js"></script>
+	<script src="./scripts/main.js"></script>
+	<script src="./scripts/app.js"></script>
+	<script src="./scripts/password.js"></script>
 </html>

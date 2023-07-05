@@ -1,0 +1,28 @@
+body{
+	background: #333;
+}
+
+::placeholder{
+	color: #eee;
+}
+
+input{
+	color: #eee;
+}
+
+nav{
+	background: #333;
+}
+
+nav li, nav li button{
+	color: #eee;
+}
+
+#info, #info label{
+	background: #eee;
+	color: #333;
+}
+
+#result{
+	color: #eee;
+}

@@ -1,11 +1,11 @@
-let form = document.querySelector('form')
-
 let classXchange = (el, initial, final) => {
 	document.querySelector(el).classList.remove(initial)
 	document.querySelector(el).classList.add(final)
 }
 
 let checkPassword = (str) => {
+	let specialChars = /[` !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
 	if (str.match('.{8,}')) {
 		classXchange('#length', 'unvalidated', 'validated')
 	} else {
@@ -30,10 +30,10 @@ let checkPassword = (str) => {
 		classXchange('#number', 'validated', 'unvalidated')
 	}
 	
-	if (str.match('\i','[a-zA-Z0-9]')) {
-		classXchange('#special', 'validated', 'unvalidated')
-	} else {
+	if (specialChars.test(str)) {
 		classXchange('#special', 'unvalidated', 'validated')
+	} else {
+		classXchange('#special', 'validated', 'unvalidated')
 	}
 }
 
@@ -43,10 +43,23 @@ form.addEventListener('submit', (e) => {
 	let userPassword = password.value.toString()
 	if (userPassword.length === 0 || userPassword.value === '') {
 		alert('Password cannot be empty!')
-		document.querySelectorAll('#conditions ul li').forEach((val, ind, arr) => {
+		conditions.forEach((val, ind, arr) => {
 			val.classList.add('unvalidated')
 		})
 	}else{
+		document.querySelector('#result').style.display = 'block'
 		checkPassword(userPassword)
 	}
+	
+	if (document.querySelectorAll('.validated').length === 5) {
+		document.querySelector('#copyPwdBtn').removeAttribute('hidden')
+	} 
 })
+
+let checkAsyncTyping = (bool) => {
+	if (bool) {
+		
+	} else {
+		
+	}
+}
