@@ -1,28 +1,28 @@
-body{
-	background: #333;
+html{
+	background: #222;
 }
 
 ::placeholder{
-	color: #eee;
+	color: #999;
 }
 
 input{
-	color: #eee;
+	color: #ddd;
 }
 
 nav{
-	background: #333;
+	background: #222;
 }
 
 nav li, nav li button{
-	color: #eee;
+	color: #ddd;
 }
 
 #info, #info label{
-	background: #eee;
-	color: #333;
+	background: #ddd;
+	color: #222;
 }
 
 #result{
-	color: #eee;
+	color: #ddd;
 }

@@ -37,29 +37,38 @@ let checkPassword = (str) => {
 	}
 }
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault()
-	
-	let userPassword = password.value.toString()
-	if (userPassword.length === 0 || userPassword.value === '') {
-		alert('Password cannot be empty!')
-		conditions.forEach((val, ind, arr) => {
-			val.classList.add('unvalidated')
-		})
-	}else{
-		document.querySelector('#result').style.display = 'block'
+if (loadData().isSync === true) {
+	form.onsubmit = (e) => {e.preventDefault()}
+	document.querySelector('#result').style.display = 'block'
+	document.querySelector("#checkPwdBtn").style.display = 'none'
+	password.onkeyup = () => {
+		let userPassword = password.value.toString()
 		checkPassword(userPassword)
+		if (document.querySelectorAll('.validated').length === 5) {
+			document.querySelector('#copyPwdBtn').removeAttribute('hidden')
+		}else{
+			document.querySelector('#copyPwdBtn').setAttribute('hidden', '')
+		}
 	}
+} else {
+	form.addEventListener('submit', (e) => {
+		e.preventDefault()
 	
-	if (document.querySelectorAll('.validated').length === 5) {
-		document.querySelector('#copyPwdBtn').removeAttribute('hidden')
-	} 
-})
-
-let checkAsyncTyping = (bool) => {
-	if (bool) {
-		
-	} else {
-		
-	}
+		let userPassword = password.value.toString()
+		if (userPassword.length === 0 || userPassword.value === '') {
+			createPopUp('Password cannot be empty!')
+			conditions.forEach((val, ind, arr) => {
+				val.classList.add('unvalidated')
+			})
+		} else {
+			document.querySelector('#result').style.display = 'block'
+			checkPassword(userPassword)
+		}
+	
+		if (document.querySelectorAll('.validated').length === 5) {
+			document.querySelector('#copyPwdBtn').removeAttribute('hidden')
+		}else{
+			document.querySelector('#copyPwdBtn').setAttribute('hidden', '')
+		}
+	})
 }

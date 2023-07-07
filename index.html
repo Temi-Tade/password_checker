@@ -29,7 +29,11 @@
 					<li><button>Clear Site Data</button></li>
 					<li id="apptheme"><label for="theme">Darkmode
 						<input type="checkbox" name="theme" id="theme" oninput="changeTheme(this, this.value)" value="light"/>
-						<span id="slider"></span>
+						<span class="slider"></span>
+					</label></li>
+					<li id="sync "><label for="syncVal">Synchronous validation
+						<input type="checkbox" name="syncVal" id="syncVal" oninput="changeValidationMode(this, this.value)" value="this.checked" />
+						<span class="slider"></span>
 					</label></li>
 				</ul>
 			</nav>
@@ -76,7 +80,6 @@
 	</main>
 	
 	<script src="./scripts/data.js"></script>
-	<script src="./scripts/main.js"></script>
 	<script src="./scripts/app.js"></script>
 	<script src="./scripts/password.js"></script>
 </html>

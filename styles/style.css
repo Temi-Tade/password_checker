@@ -103,18 +103,18 @@ nav li button:hover, nav li button:focus{
 	color: #EEE;
 }
 
-#apptheme label{
+li label{
 	display: flex;
 	padding: .75rem;
 	justify-content: space-between;
 	align-items: center
 }
 
-#apptheme #theme{
+li input{
 	display: none;
 }
 
-#slider{
+.slider{
 	display: inline-block;
 	width: 50px;
 	height: 20px;
@@ -123,7 +123,7 @@ nav li button:hover, nav li button:focus{
 	border-radius: 26px
 }
 
-#slider::before{
+.slider::before{
 	position: absolute;
 	height: 25px;
 	width: 25px;
@@ -135,12 +135,12 @@ nav li button:hover, nav li button:focus{
 	transition: .5s;
 }
 
-#theme:checked + #slider::before{
+input:checked + .slider::before{
 	transform: translateX(25px);
 	background: var(--bgcolor);
 }
 
-#theme:checked + #slider{
+input:checked + .slider{
 	background: var(--light)
 }
 
@@ -263,8 +263,6 @@ button:focus{
 }
 
 /*
-Asynchronous validation while typing
 password generator
-theme
 animation
 */
