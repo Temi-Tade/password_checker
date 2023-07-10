@@ -12,9 +12,10 @@ input{
 
 nav{
 	background: #222;
+	color: #ddd;
 }
 
-nav li, nav li button{
+nav li, nav li button, nav div{
 	color: #ddd;
 }
 
@@ -24,5 +25,22 @@ nav li, nav li button{
 }
 
 #result{
+	color: #ddd;
+}
+
+.menu a{
+	color: #ddd;
+}
+
+#pop-up{
+	background: #ddd;
+	color: #222;
+}
+
+#loading{
+	background: #222;
+}
+
+#img_con h3{
 	color: #ddd;
 }

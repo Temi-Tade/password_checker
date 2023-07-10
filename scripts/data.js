@@ -13,6 +13,7 @@ let theme = document.querySelector("#theme")
 let darkModeCss = document.querySelector('#darkmode')
 let sync = document.querySelector('#syncVal')
 
+
 let loadData = () => {
 	return JSON.parse(localStorage.getItem('appUser'))
 }
@@ -78,4 +79,3 @@ if (localStorage.getItem('appUser') === null) {
 let saveData = (x) => {
 	localStorage.setItem('appUser', JSON.stringify(x))
 }
-

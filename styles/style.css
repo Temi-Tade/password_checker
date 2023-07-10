@@ -32,13 +32,14 @@ body{
 	font-size: var(--fsize);
 	position: relative;
 	height: 100%;
+	font-family: Ubuntu, sans-serif;
 }
 
 button{
 	border: 0;
 	background: var(--bgcolor);
 	color: #EEE;
-	padding: .75rem;
+	padding: .5rem;
 	border-radius: var(--borad);
 	font-size: 1rem
 }
@@ -46,7 +47,6 @@ button{
 header{
 	background: var(--bgcolor);
 	color: #EEE;
-	padding: .25rem;
 	display: flex;
 	align-items: center
 }
@@ -55,6 +55,31 @@ header button{
 	display: block;
 	font-size: 1.75rem;
 	margin-right: .5rem
+}
+
+#loading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #eee;
+	z-index: 7;
+}
+
+#img_con{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	flex-direction: column;
+}
+
+#img_con img{
+	display: block;
+	width: 5rem;
+	height: 5rem;
+	border-radius: .5rem;
 }
 
 #navbg{
@@ -78,6 +103,7 @@ nav{
 	left: -20rem;
 	padding: .5rem;
 	transition: .25s;
+	color: #222;
 }
 
 nav ul{
@@ -144,6 +170,31 @@ input:checked + .slider{
 	background: var(--light)
 }
 
+#nav_footer{
+	position: fixed;
+	bottom: 1rem;
+	left: 3.75rem;
+	font-size: 1.2rem
+}
+
+.menu{
+	max-height: 0;
+	overflow-y: hidden;
+	display: flex;
+}
+
+.option:focus + .menu{
+	max-height: 10rem
+}
+
+.menu a{
+	font-size: 2.5rem;
+	color: #333;
+	text-decoration: none;
+	display: block;
+	margin: 0 .5rem
+}
+
 #info{
 	padding: 1rem;
 	background: var(--color);
@@ -170,14 +221,14 @@ input:checked + .slider{
 #pop-up{
 	width: 20rem;
 	padding: .75rem;
-	box-shadow: 0 0 4px 2px #aaa;
 	border-radius: var(--borad);
 	position: fixed;
 	margin: .25rem;
 	left: -25rem;
-	background: #EEE;
+	background: #333;
 	transition: .75s;
-	font-weight: bold
+	font-weight: bold;
+	color: #ddd;
 }
 
 form{
@@ -220,13 +271,13 @@ button:focus{
 }
 
 #field #togglePasswordBtn{
-	width: 20%;
+	width: 4rem;
 	font-size: 1.25rem;
 	border-radius: 0 .5rem .5rem 0
 }
 
 #checkPwdBtn{
-	width: 70%;
+	width: 15rem;
 	font-size: 1.2rem;
 	display: block;
 	margin: 1rem auto;
@@ -265,4 +316,5 @@ button:focus{
 /*
 password generator
 animation
+loader
 */

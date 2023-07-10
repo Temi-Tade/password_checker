@@ -3,30 +3,64 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=false">
 	<title>PassVault</title>
 	<link rel="stylesheet" href="./styles/style.css">
 	<link rel="stylesheet" href="" id="darkmode">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="shortcut icon" href="./assets/image/logo.jpg" type="image/x-icon"/>
 </head>
 
 <body>
 	<main>
 		<header>
 			<button id="navbarbtn"><i class="fas fa-bars"></i></button>
-			<h1>PassVault</h1>
+			<h2>PassVault</h2>
 		</header>
+		
+		<section id="loading">
+			<div id="img_con">
+				<img src="./assets/image/logo.jpg" alt="logo">
+				<h3>PassCheck</h3>
+			</div>
+		</section>
 		
 		<section id="navbg">
 			<nav>
+				<h3>PassCheck</h3>
 				<ul type="none">
-					<li><button>About</button></li>
-					<li><button>Privacy Policy</button></li>
-					<li><button>Contact</button></li>
-					<li><button>Other products</button></li>
-					<li><button>Clear Site Data</button></li>
+					<li>
+						<button class="option">Contact</button>
+						<div class="menu">
+								<a href="https://github.com/Temi-Tade" class="fab fa-github">
+								</a>
+								
+								<a href="https://instagram.com/temi_tenderluxe?igshid=ZDc4ODBmNjlmNQ==" class="fab fa-instagram">
+								</a>
+								
+								<a href="https://twitter.com/Temi_tade2805?s=09" class="fab fa-twitter">
+								</a>
+								
+								<a href="mailto:dev.mode.006@gmail.com" class="fas fa-envelope"></a>
+								
+						</div>
+					</li>
+					<li>
+						<button class="option">Other products</button>
+						<div class="menu">
+								<a href="https://temi-tade.github.io/love_calculator/" style="font-size: 1.2rem">
+									Love Calculator 
+								</a>
+								
+								<a href="https://temi-tade.github.io/countdown-timer" style="font-size: 1.2rem">
+									Countdown timer 
+								</a>
+						</div>
+							
+					</li>
+					<li><button onclick="clearAppData()">Clear Site Data</button></li>
 					<li id="apptheme"><label for="theme">Darkmode
 						<input type="checkbox" name="theme" id="theme" oninput="changeTheme(this, this.value)" value="light"/>
 						<span class="slider"></span>
@@ -36,6 +70,9 @@
 						<span class="slider"></span>
 					</label></li>
 				</ul>
+				<div id="nav_footer">
+					&copy; TenderLuxe
+				</div>
 			</nav>
 		</section>
 		
@@ -82,4 +119,5 @@
 	<script src="./scripts/data.js"></script>
 	<script src="./scripts/app.js"></script>
 	<script src="./scripts/password.js"></script>
+	<script src="./scripts/load.js"></script>
 </html>

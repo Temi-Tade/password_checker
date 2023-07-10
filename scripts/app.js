@@ -66,20 +66,39 @@ let changeTheme = (el, val) => {
 let changeValidationMode = (el, val) => {
 	let state = loadData()
 	if (el.checked === true) {
+		createPopUp('Synchronous validation mode activated')
 		document.querySelector("#checkPwdBtn").style.display = 'none'
 		document.querySelector("#result").style.display = 'block'
 		val = true
 		state.isSync = val
 		saveData(state)
-		createPopUp('Synchronous validation mode activated')
 		history.go(0)
 	} else {
+		createPopUp('Synchronous validation mode deactivated')
 		document.querySelector("#checkPwdBtn").style.display = 'block'
 		document.querySelector('#result').style.display = 'none'
 		val = false
 		state.isSync = val
 		saveData(state)
-		createPopUp('Synchronous validation mode deactivated')
 		history.go(0)
 	}
 }
+
+let clearAppData = () => {
+	let req = confirm('You are about to clear all related data to this application, this includes all user preferences. This action cannot be undone, click OK to continue\nNote that the application will be relaunched after its related data is cleared')
+	switch (req.toString()) {
+		case 'true':
+			createPopUp('Application data successfully cleared.')
+			let state = loadData()
+			state.theme = 'light'
+			state.isSync = 'false'
+			state.showInfo = 'true'
+			saveData(state)
+			history.go(0)
+			break
+			
+		case 'false':
+			createPopUp('Application data still remains intact')
+	}
+}
+
